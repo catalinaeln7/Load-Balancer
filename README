@@ -1,0 +1,23 @@
+POPA CATALINA-ELENA 315CA
+
+Am folosit implementarile de la laborator pentru hashtable si linked list.
+
+Structura unui server consta in:
+* hashtable-ul pe care acesta il retine
+* ID-ul sau
+
+Functiile din server.c sunt (in cea mai mare parte), functiile pentru
+hashtable.
+
+Structura lui load balancer este alcatuita din:
+* un vector ce retine etichetele serverelor in ordinea hash-urilor lor.
+* o variabila care retine cate etichete se afla in hashring
+* o variabila care retine numarul total de obiecte stocate pe servere
+* o lista inlantuita in care se afla stocate serverele
+
+Functiile auxiliare sunt folosite in implementarea functiilor loader-ului
+(functionalitatea lor e descrisa in comentariile din cod).
+
+In functiile loader_add_server si loader_remove_server am adaugat, respectiv
+am eliminat din hashring etichetele, apoi am apelat functia rebalance_add
+care a redistribuit obiectele din serverul urmator in hashring.
